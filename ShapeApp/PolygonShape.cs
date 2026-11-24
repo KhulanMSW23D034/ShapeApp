@@ -15,6 +15,13 @@ namespace ShapeApp
 
         public override string Name { get { return "Polygon"; } }
 
+        public override void Move(int dx, int dy)
+        {
+            base.Move(dx, dy);
+            for (int i = 0; i < _points.Length; i++)
+                _points[i] = new Point(_points[i].X + dx, _points[i].Y + dy);
+        }
+
         public override void Draw(Graphics g)
         {
             using (var fill = MakeFill()) g.FillPolygon(fill, _points);
