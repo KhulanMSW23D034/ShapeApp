@@ -33,6 +33,19 @@ namespace ShapeApp
             get { return "Дүрс"; }
         }
 
+        // Цэг дүрсийн хүрээн дотор байгаа эсэхийг шалгана
+        public virtual bool Contains(Point p)
+        {
+            return Bounds.Contains(p);
+        }
+
+        // Дүрсийг (dx, dy)-ээр зөөнө
+        public virtual void Move(int dx, int dy)
+        {
+            X += dx;
+            Y += dy;
+        }
+
         // Виртуал метод: суурь класс дүрсийн нэрийг доор нь бичнэ
         public virtual void Draw(Graphics g)
         {
